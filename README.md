@@ -10,6 +10,12 @@ Salma Khan | January 17, 2020
 
 ## Technologies Used
  * React
+ * Expres.js
+ * Node.js
+ * Mongoose
+ * MongoDB 
+ * MongoDB Atlas 
+ 
 
 ## Project Planning
 * Trello Board: [Bookworm](https://trello.com/b/9kAnNtlV/bookworm-mern-stack)
