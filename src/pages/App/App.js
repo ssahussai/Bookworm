@@ -27,12 +27,14 @@ class App extends Component {
             <MyBooklistPage {...props} />
             }
           />
-          <Route exact path="/login" render={(props) => 
-            <LoginPage {...props} />
+          <Route exact path="/login" render={() => 
+            <LoginPage />
             }
           />
-          <Route exact path="/signup" render={(props) => 
-            <SignupPage {...props} />
+          <Route exact path="/signup" render={({ history }) => 
+            <SignupPage 
+              history={history}
+            />
             }
           />
         </Switch>
