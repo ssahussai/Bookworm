@@ -10,6 +10,6 @@ async function signup(req, res) {
         await user.save();
         res.json(user);
     } catch (err) {
-
+        res.status(400).json(err);
     }
 }
