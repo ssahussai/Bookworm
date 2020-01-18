@@ -15,7 +15,7 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 
 //api routes must be before the "catch all" route
-
+app.use('/api/users', require('./routes/api/users'));
 
 
 //the "catch all" route
