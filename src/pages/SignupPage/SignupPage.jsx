@@ -11,7 +11,6 @@ class SignupPage extends Component {
         this.setState({message: msg});
     }
 
-
     render() {
         return (
           <div>

@@ -15,12 +15,12 @@ Salma Khan | January 17, 2020
  * Mongoose
  * MongoDB 
  * MongoDB Atlas 
+ * Token-based Auth with React & JWTs
  
 
 ## Project Planning
-* Trello Board: [Bookworm](https://trello.com/b/9kAnNtlV/bookworm-mern-stack)
-* Wireframe: [Bookworm](https://salmakhan.proto.io/editor/index.cfm?id=d69db517-3dae-4053-a423-6239996ca28b)
-* Entity Relationship Diagram (ERD): [Bookworm](https://www.lucidchart.com/documents/edit/4a50144b-8289-4575-b19e-fecfdd9daef3/0_0?beaconFlowId=80708634A4AE0BDA)
+* Trello Board includes both wireframe & Entity-Relationship-Diagram (ERD): [Bookworm](https://trello.com/b/9kAnNtlV/bookworm-mern-stack)
+
 
 ## Unsolved Problem
 
