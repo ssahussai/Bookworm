@@ -8,7 +8,7 @@ import MyBooklistPage from '../MyBooklistPage/MyBooklistPage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
 import userService from '../../utils/userService';
-
+import MyReviewsPage from '../MyReviewsPage/MyReviewsPage';
 
 
 class App extends Component {
@@ -18,7 +18,6 @@ class App extends Component {
       user: userService.getUser()
     };
   }
-
 
   /*--- Callback Methods ---*/
   handleLogout = () => {
@@ -44,6 +43,10 @@ class App extends Component {
           />
           <Route exact path="/find-books-page" render={(props) => 
             <FindBooksPage {...props} />
+            }
+          />
+          <Route exact path="/my-reviews-page" render={(props) => 
+            <MyReviewsPage {...props} />
             }
           />
           <Route exact path="/my-booklist-page" render={(props) => 
