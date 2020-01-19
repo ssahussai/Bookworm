@@ -7,9 +7,18 @@ import FindBooksPage from '../FindBooksPage/FindBooksPage';
 import MyBooklistPage from '../MyBooklistPage/MyBooklistPage';
 import LoginPage from '../LoginPage/LoginPage';
 import SignupPage from '../SignupPage/SignupPage';
+import userService from '../../utils/userService';
+
 
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: userService.getUser()
+    };
+  }
+
   render () {
     return (
       <div className="App">
