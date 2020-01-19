@@ -18,8 +18,12 @@ function getUser() {
   return tokenService.getUserFromToken();
 }
 
+function logout() {
+  tokenService.removeToken();
+}
 
 export default {
   signup,
-  getUser
+  getUser,
+  logout
 }; 

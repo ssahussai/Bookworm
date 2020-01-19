@@ -19,10 +19,18 @@ class App extends Component {
     };
   }
 
+  handleLogout = () => {
+    userService.logout();
+    this.setState({ user: null });
+  }
+
   render () {
     return (
       <div className="App">
-        <NavBar />
+        <NavBar 
+          user={this.state.user}
+          handleLogout={this.handleLogout}
+        />
         <Switch>
           <Route exact path="/" render={(props) => 
             <HomePage {...props} />
