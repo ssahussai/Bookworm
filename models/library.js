@@ -23,5 +23,4 @@ var librarySchema = new Schema ({
     timestamps: true
 })
 
-
 module.exports = mongoose.model('Library', librarySchema);
