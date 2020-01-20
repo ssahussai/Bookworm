@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+// const Library = require('./library');
 
 const SALT_ROUNDS = 6;
 
@@ -12,7 +13,10 @@ const userSchema = new mongoose.Schema({
         unique: true
     },
     password: String,
-    libraries: [String]
+    libraries: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Library'
+    }]
 }, {
     timestamps: true
 });
