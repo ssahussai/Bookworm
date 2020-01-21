@@ -14,7 +14,6 @@ class FindBooksForm extends Component {
     }
   }
 
-
   handleChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -65,21 +64,22 @@ class FindBooksForm extends Component {
           </div>
         </form>
         <Link to='/'>Cancel</Link>
-        <section>
+        <section className={styles.findBooksSection}>
           {
             this.state.results.map((item, idx) => (
-            <div key={idx}>
+            <div key={idx} className={styles.findBooksContainer}>
               <p>Book Title: {item.title}</p>
               <p>Author: {item.author}</p>
               <p>Description: {item.description}</p>
               <p>Buy it on Amazon: {item.amazon_product_url}</p>
+              <button type="submit">Add to My Booklist</button>
             </div>
             ))
           }
         </section> 
         <div>
           <p>Click the button below to find the list names so that you can search it to get books within that list.</p>
-          <button type="button" onClick={this.handlClickFindList}>Find List Names</button>
+          <button type="submit" onClick={this.handlClickFindList}>Find List Names</button>
           {
             this.state.listResults.map((item, idx) => (
             <div key={idx}>

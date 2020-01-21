@@ -11,7 +11,6 @@ export function getAllList() {
 }
 
 
-
 // Reviews page
 export function searchBooksByAuthor(author) {
     return fetch(`${baseURL}reviews.json?author=${author}&api-key=${apiKey}`).then(response => response.json());

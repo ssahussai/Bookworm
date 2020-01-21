@@ -84,13 +84,14 @@ class ReviewsForm extends Component {
             <section className={styles.bookSection}>
               {
                 this.state.results.map((item, idx) => (
-                <div key={idx}>
+                <div key={idx} className={styles.bookReviewContainer}>
                   <p>Title: {item.book_title}</p>
                   <p>Author: {item.book_author}</p>
                   <p>Summary: {item.summary}</p>
                   <p>Published On: {item.publication_dt}</p>
                   <p>ISBN: {item.isbn13}</p>
                   <p>Reviews Link: {item.url}</p>
+                  <button type="submit">Add to My Booklist</button>
                 </div>
                 ))
               }
