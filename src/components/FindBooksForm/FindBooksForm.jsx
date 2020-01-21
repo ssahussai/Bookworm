@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './FindBooksForm.module.css';
-import { getAllBooks, searchBookreviewByAuthor } from '../../utils/books-api';
+import { searchBooksByIsbn, searchBooksByTitle, searchBooksByAuthor } from '../../utils/books-api';
 
 class FindBooksForm extends Component {
     constructor() {
       super()
       this.state = {
+        isbnName: "",
+        titleName: "",
         authorName: "",
         results: []
     }
@@ -18,11 +20,25 @@ class FindBooksForm extends Component {
 
     handleSubmit = e => {
       e.preventDefault();
-      searchBookreviewByAuthor(this.state.authorName)
+      searchBooksByAuthor(this.state.authorName)
       .then(data => {
         this.setState({ 
           authorName: '',
           results: data.results 
+        });
+      });
+      searchBooksByTitle(this.state.titleName)
+      .then(data => {
+        this.setState({
+          titleName: '',
+          results: data.results
+        });
+      });
+      searchBooksByIsbn(this.state.isbnName)
+      .then(data => {
+        this.setState({
+          isbnName: '',
+          results: data.results
         });
       });
     }
@@ -39,7 +55,23 @@ class FindBooksForm extends Component {
                     name="authorName" 
                     value={this.state.authorName} 
                     onChange={this.handleChange}
-                    type="text" placeholder="Author Name"
+                    type="text" placeholder="Author"
+                  />
+                </div>
+                <div>
+                  <input
+                    name="titleName"
+                    value={this.state.titleName}
+                    onChange={this.handleChange}
+                    type="text" placeholder="Book Title"
+                  />
+                </div>
+                <div>
+                  <input
+                    name="isbnName"
+                    value={this.state.isbnName}
+                    onChange={this.handleChange}
+                    type="text" placeholder="ISBN"
                   />
                 </div>
               </div>
@@ -55,6 +87,9 @@ class FindBooksForm extends Component {
                 <div key={idx}>
                   <p>Title: {item.book_title}</p>
                   <p>Author: {item.book_author}</p>
+                  <p>Summary: {item.summary}</p>
+                  <p>Published On: {item.publication_dt}</p>
+                  <p>ISBN: {item.isbn13}</p>
                 </div>
                 ))
               }
