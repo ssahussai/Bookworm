@@ -9,7 +9,7 @@ const NavBar = (props) => {
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to="/find-books-page">Find Books</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link to="/my-reviews-page">My Reviews</Link>
+      <Link to="/my-reviews-page">Reviews</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to="/my-booklist-page">My Booklist</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
