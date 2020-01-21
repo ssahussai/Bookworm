@@ -1,102 +1,96 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './FindBooksForm.module.css';
-import { searchBooksByIsbn, searchBooksByTitle, searchBooksByAuthor } from '../../utils/books-api';
+import { searchBooksByListData, getAllList } from '../../utils/books-api';
 
 class FindBooksForm extends Component {
-    constructor() {
-      super()
-      this.state = {
-        isbnName: "",
-        titleName: "",
-        authorName: "",
-        results: []
+  constructor() {
+    super()
+    this.state = {
+      list: "",
+      listName: "",
+      results: [],
+      listResults: []
     }
   }
 
-    handleChange = e => {
-      this.setState({ [e.target.name]: e.target.value });
-    }
 
-    handleSubmit = e => {
-      e.preventDefault();
-      searchBooksByAuthor(this.state.authorName)
-      .then(data => {
-        this.setState({ 
-          authorName: '',
-          results: data.results 
-        });
-      });
-      searchBooksByTitle(this.state.titleName)
-      .then(data => {
-        this.setState({
-          titleName: '',
-          results: data.results
-        });
-      });
-      searchBooksByIsbn(this.state.isbnName)
-      .then(data => {
-        this.setState({
-          isbnName: '',
-          results: data.results
-        });
-      });
-    }
+  handleChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
 
-    render() {
-        return (
+
+  handlClickFindList = e => {
+    e.preventDefault();
+    getAllList(this.state.list)
+    .then(data => {
+      this.setState({
+        list: '',
+        listResults: data.results
+      });
+    });
+  }
+
+
+  handleSubmit = e => {
+    e.preventDefault();
+    searchBooksByListData(this.state.listName)
+    .then(data => {
+      this.setState({
+        listName: '',
+        results: data.results.books
+      });
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <header className={styles.formHeader}>Search best seller books</header>
+        <form onSubmit={this.handleSubmit}>
           <div>
-            <header className={styles.formHeader}>Search New York Times best seller books</header>
-            <form onSubmit={this.handleSubmit}>
-              <div>
-              <div>
-                <div>
-                  <input 
-                    name="authorName" 
-                    value={this.state.authorName} 
-                    onChange={this.handleChange}
-                    type="text" placeholder="Author"
-                  />
-                </div>
-                <div>
-                  <input
-                    name="titleName"
-                    value={this.state.titleName}
-                    onChange={this.handleChange}
-                    type="text" placeholder="Book Title"
-                  />
-                </div>
-                <div>
-                  <input
-                    name="isbnName"
-                    value={this.state.isbnName}
-                    onChange={this.handleChange}
-                    type="text" placeholder="ISBN"
-                  />
-                </div>
-              </div>
-                <div>
-                  <button type="submit">Search</button>
-                </div>
-              </div>
-            </form>
-            <Link to='/'>Cancel</Link>
-            <section>
-              {
-                this.state.results.map((item, idx) => (
-                <div key={idx}>
-                  <p>Title: {item.book_title}</p>
-                  <p>Author: {item.book_author}</p>
-                  <p>Summary: {item.summary}</p>
-                  <p>Published On: {item.publication_dt}</p>
-                  <p>ISBN: {item.isbn13}</p>
-                </div>
-                ))
-              }
-            </section>
+          <div>
+            <div>
+              <input 
+                name="listName"
+                value={this.state.listName} 
+                onChange={this.handleChange}
+                type="text" placeholder="Enter List Name" 
+              />
+            </div>
           </div>
-        );
-    }
+            <div>
+              <button type="submit">Search</button>
+            </div>
+          </div>
+        </form>
+        <Link to='/'>Cancel</Link>
+        <section>
+          {
+            this.state.results.map((item, idx) => (
+            <div key={idx}>
+              <p>Book Title: {item.title}</p>
+              <p>Author: {item.author}</p>
+              <p>Description: {item.description}</p>
+              <p>Buy it on Amazon: {item.amazon_product_url}</p>
+            </div>
+            ))
+          }
+        </section> 
+        <div>
+          <p>Click the button below to find the list names so that you can search it to get books within that list.</p>
+          <button type="button" onClick={this.handlClickFindList}>Find List Names</button>
+          {
+            this.state.listResults.map((item, idx) => (
+            <div key={idx}>
+              <p>{item.list_name}</p>
+            </div>
+            ))
+          }
+        </div>   
+      </div>
+    );
+  }
 }
     
 export default FindBooksForm;
