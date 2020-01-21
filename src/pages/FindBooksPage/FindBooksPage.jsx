@@ -1,11 +1,14 @@
 import React from 'react'
+import FindBooksForm from '../../components/FindBooksForm/FindBooksForm';
 
 
 const FindBooksPage = (props) => {
     return (
-        <main>
-            <h1>Search books from New York Times best seller's list</h1>
-        </main>
+        <div>
+            <FindBooksForm /> <br/>
+            <a href="https://developer.nytimes.com"><img src="https://developer.nytimes.com/files/poweredby_nytimes_200a.png?v=1568441068443" alt="NYT logo"/></a>
+            
+        </div>
     );
 }
 

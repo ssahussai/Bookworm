@@ -2,7 +2,7 @@
 
 Created By | Last Updated
 -----------|--------------
-Salma Khan | January 18, 2020
+Salma Khan | January 19, 2020
 
 
 ## User Stories

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const Schema = mongoose.Schema;
 // const Library = require('./library');
 
 const SALT_ROUNDS = 6;
