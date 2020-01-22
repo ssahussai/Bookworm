@@ -35,9 +35,27 @@ function login(creds) {
   .then(({token}) => tokenService.setToken(token));
 }
 
+function getBooks(id) {
+  return fetch(BASE_URL + id + '/books').then(res => res.json());
+}
+
+function addBook(id, book) {
+  return fetch(BASE_URL + id + '/books', {
+    method: 'POST',
+    headers: new Headers({'Content-Type': 'application/json'}),
+    body: JSON.stringify(book)
+  })
+  .then(res => {
+    if(res.ok) return res.json();
+    throw new Error('Something Went Wrong');
+  })
+}
+
 export default {
   signup,
   getUser,
   logout,
-  login
+  login,
+  getBooks,
+  addBook
 }; 

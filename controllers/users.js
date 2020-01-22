@@ -4,7 +4,9 @@ const SECRET = process.env.SECRET;
 
 module.exports = {
     signup,
-    login
+    login,
+    getBooks,
+    addbook
 };
 
 async function signup(req, res) {
@@ -35,6 +37,26 @@ async function login(req, res) {
     }
   }
 
+async function getBooks(req, res) {
+  try {
+    const user = await User.findById(req.params.id);
+    res.json(user.books);
+  } catch (error) {
+    res.json(error);
+  }
+}
+
+async function addbook(req, res) {
+  try {
+    const user = await User.findById(req.params.id);
+    user.books.push(req.body);
+    await user.save();
+    res.status(200).json(user.books);
+  } catch (error) {
+    res.send(error);
+  }
+}
+  
 function createJWT(user) {
     return jwt.sign(
       {user}, 

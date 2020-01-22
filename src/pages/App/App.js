@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch } from 'react-router-dom'; 
+import { Route, Switch, withRouter } from 'react-router-dom'; 
 import NavBar from '../../components/NavBar/NavBar';
 import HomePage from '../HomePage/HomePage';
 import FindBooksPage from '../FindBooksPage/FindBooksPage';
@@ -15,18 +15,40 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: userService.getUser()
+      user: userService.getUser(),
+      books: []
     };
   }
+
+
 
   /*--- Callback Methods ---*/
   handleLogout = () => {
     userService.logout();
-    this.setState({ user: null });
+    this.setState({ user: null, books: [] });
   }
 
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
+  }
+
+  componentDidMount() {
+    if(this.state.user) {
+      userService.getBooks(this.state.user._id).then(data => {
+        this.setState({ books: data });
+      })
+    }
+  }
+
+  handleClick = ({ book_title, book_author }) => {
+    userService.addBook(this.state.user._id, {
+      title: book_title,
+      author: book_author
+    }).then(data => {
+       this.setState({ books: data }, () => {
+         return this.props.history.push('/my-booklist-page')
+       })
+    })
   }
 
   render () {
@@ -46,11 +68,13 @@ class App extends Component {
             }
           />
           <Route exact path="/my-reviews-page" render={(props) => 
-            <MyReviewsPage {...props} />
+            <MyReviewsPage {...props} 
+              handleClick={this.handleClick}
+            />
             }
           />
           <Route exact path="/my-booklist-page" render={(props) => 
-            <MyBooklistPage {...props} />
+            <MyBooklistPage books={this.state.books} {...props} />
             }
           />
           <Route exact path="/login" render={({ history }) => 
@@ -73,4 +97,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
