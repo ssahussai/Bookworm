@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './MyBooklistPage.module.css';
 
 const MyBooklistPage = (props) => {
     return (
@@ -7,9 +8,9 @@ const MyBooklistPage = (props) => {
             { props.books.length !== 0 
                 ? props.books.map((book, idx) => {
                    return (
-                       <section key={idx}>
-                        <h1>{book.title}</h1>
-                        <h3>{book.author}</h3>
+                       <section key={idx} className={styles.booklistSection}>
+                        <h3>Book Title: {book.title}</h3>
+                        <p>Author: {book.author}</p>
                        </section>
                    ); 
                 })

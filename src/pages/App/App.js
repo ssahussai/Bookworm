@@ -21,7 +21,6 @@ class App extends Component {
   }
 
 
-
   /*--- Callback Methods ---*/
   handleLogout = () => {
     userService.logout();
