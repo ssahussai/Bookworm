@@ -20,6 +20,12 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    if(this.state.user) {
+      this.handleGetBooks()
+    }
+  }
+
 
   /*--- Callback Methods ---*/
   handleLogout = () => {
@@ -28,15 +34,15 @@ class App extends Component {
   }
 
   handleSignupOrLogin = () => {
-    this.setState({user: userService.getUser()});
+    this.setState({user: userService.getUser()}, () => {
+      this.handleGetBooks(); 
+    });
   }
 
-  componentDidMount() {
-    if(this.state.user) {
-      userService.getBooks(this.state.user._id).then(data => {
-        this.setState({ books: data });
-      })
-    }
+  handleGetBooks = () => {
+    userService.getBooks(this.state.user._id).then(data => {
+      this.setState({ books: data });
+    });
   }
 
   handleClick = ({ book_title, book_author }) => {
@@ -111,3 +117,4 @@ class App extends Component {
 }
 
 export default withRouter(App);
+ 

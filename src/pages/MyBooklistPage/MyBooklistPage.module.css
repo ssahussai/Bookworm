@@ -1,9 +1,10 @@
 .booklistSection {
-    text-align: left;
-    margin-left: 50px;
-    margin-right: 50px;
+    text-align: center;
+    margin-left: 60px;
+    /* do 500 margin for both */
+    margin-right: 60px;
     padding: 20px 20px;
     border: 1px solid grey;
-    border-radius: 40px;
+    border-radius: 50px;
 }
 
