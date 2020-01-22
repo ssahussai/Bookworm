@@ -95,7 +95,9 @@ class ReviewsForm extends Component {
                   <p>Published On: {item.publication_dt}</p>
                   <p>ISBN: {item.isbn13}</p>
                   <p>Reviews Link: {item.url}</p>
-                  <button onClick={() => this.handleClick(item)} type="submit">Add to My Booklist</button>
+                  <button onClick={() => this.handleClick(item)} type="submit">
+                    Add to My Booklist
+                  </button>
                 </div>
                 ))
               }

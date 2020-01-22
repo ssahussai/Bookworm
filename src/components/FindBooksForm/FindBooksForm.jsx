@@ -42,6 +42,10 @@ class FindBooksForm extends Component {
     });
   }
 
+  handleClick = (book) => {
+    this.props.handleClickFindBook(book)
+  }
+
   render() {
     return (
       <div>
@@ -72,7 +76,7 @@ class FindBooksForm extends Component {
               <p>Author: {item.author}</p>
               <p>Description: {item.description}</p>
               <p>Buy it on Amazon: {item.amazon_product_url}</p>
-              <button type="submit">Add to My Booklist</button>
+              <button onClick={() => this.handleClick(item)} type="submit">Add to My Booklist</button>
             </div>
             ))
           }

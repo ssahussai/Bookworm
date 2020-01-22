@@ -50,6 +50,18 @@ class App extends Component {
     })
   }
 
+  // findbooks
+  handleClickFindBook = ({ title, author }) => {
+    userService.addBook(this.state.user._id, {
+      title: title,
+      author: author
+    }).then(data => {
+       this.setState({ books: data }, () => {
+         return this.props.history.push('/my-booklist-page')
+       })
+    })
+  }
+
   render () {
     return (
       <div className="App">
@@ -63,7 +75,9 @@ class App extends Component {
             }
           />
           <Route exact path="/find-books-page" render={(props) => 
-            <FindBooksPage {...props} />
+            <FindBooksPage {...props} 
+              handleClickFindBook={this.handleClickFindBook}
+            />
             }
           />
           <Route exact path="/my-reviews-page" render={(props) => 

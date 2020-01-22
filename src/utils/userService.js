@@ -22,6 +22,8 @@ function logout() {
   tokenService.removeToken();
 }
 
+
+
 function login(creds) {
   return fetch(BASE_URL + 'login', {
     method: 'POST',
@@ -35,9 +37,12 @@ function login(creds) {
   .then(({token}) => tokenService.setToken(token));
 }
 
+
+
 function getBooks(id) {
   return fetch(BASE_URL + id + '/books').then(res => res.json());
 }
+
 
 function addBook(id, book) {
   return fetch(BASE_URL + id + '/books', {
