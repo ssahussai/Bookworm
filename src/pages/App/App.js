@@ -26,7 +26,6 @@ class App extends Component {
     }
   }
 
-
   /*--- Callback Methods ---*/
   handleLogout = () => {
     userService.logout();
@@ -45,6 +44,16 @@ class App extends Component {
     });
   }
 
+  // delete book
+  // handleClickDeleteBook = (id) => {
+  //   userService.deleteBook(id)
+  //   .then(data => {
+  //     this.setState({ books: data }, () => {
+  //       return this.props.history.push('/my-booklist-page')
+  //     })
+  //   })
+  // }
+
   handleClick = ({ book_title, book_author }) => {
     userService.addBook(this.state.user._id, {
       title: book_title,
@@ -56,7 +65,7 @@ class App extends Component {
     })
   }
 
-  // findbooks
+  
   handleClickFindBook = ({ title, author }) => {
     userService.addBook(this.state.user._id, {
       title: title,
@@ -71,10 +80,17 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <NavBar 
-          user={this.state.user}
-          handleLogout={this.handleLogout}
-        />
+        <header className="App-header">
+          Bookworm
+          <nav>
+            <NavBar 
+              user={this.state.user}
+              handleLogout={this.handleLogout}
+            />
+          </nav>
+        </header>
+
+        <main> 
         <Switch>
           <Route exact path="/" render={(props) => 
             <HomePage {...props} />
@@ -93,7 +109,11 @@ class App extends Component {
             }
           />
           <Route exact path="/my-booklist-page" render={(props) => 
-            <MyBooklistPage books={this.state.books} {...props} />
+            <MyBooklistPage 
+              books={this.state.books} {...props} 
+              // handleClickDeleteBook={this.handleClickDeleteBook}
+
+            />
             }
           />
           <Route exact path="/login" render={({ history }) => 
@@ -111,6 +131,7 @@ class App extends Component {
             }
           />
         </Switch>
+        </main>
       </div>
     );
   }

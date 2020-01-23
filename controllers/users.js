@@ -6,7 +6,8 @@ module.exports = {
     signup,
     login,
     getBooks,
-    addbook
+    addbook,
+    // deleteBook
 };
 
 async function signup(req, res) {
@@ -56,7 +57,15 @@ async function addbook(req, res) {
     res.send(error);
   }
 }
-  
+
+// delete book
+// async function deleteBook(req, res) {
+//   const user = await User.findById(req.params.id);
+//   const deleteBook = user.books.delete(req.params.id);
+//   res.status(200).json(deleteBook);
+// }
+
+
 function createJWT(user) {
     return jwt.sign(
       {user}, 

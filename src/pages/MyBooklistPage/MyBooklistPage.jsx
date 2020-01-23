@@ -1,7 +1,13 @@
 import React from 'react';
 import styles from './MyBooklistPage.module.css';
 
+
 const MyBooklistPage = (props) => {
+
+    // handleClickDelete = (id) => {
+    //     this.props.handleClickDeleteBook(id)
+    // }
+
     return (
         <main>
             <h1>My Book List</h1>

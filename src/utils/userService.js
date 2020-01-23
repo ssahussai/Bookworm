@@ -56,11 +56,20 @@ function addBook(id, book) {
   })
 }
 
+// function deleteBook(id) {
+//   return fetch(BASE_URL + id + '/books', {
+//     method: 'DELETE'
+//   })
+//   .then(res => res.json());
+// }
+
+
 export default {
   signup,
   getUser,
   logout,
   login,
   getBooks,
-  addBook
+  addBook,
+  // deleteBook
 }; 

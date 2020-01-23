@@ -5,11 +5,12 @@ const usersCtrl = require('../../controllers/users');
 /*---------- Public Routes ----------*/
 router.post('/signup', usersCtrl.signup);
 router.post('/login', usersCtrl.login);
-router.get('/:id/books', usersCtrl.getBooks);
-router.post('/:id/books', usersCtrl.addbook);
-
 
 /*---------- Protected Routes ----------*/
+router.get('/:id/books', usersCtrl.getBooks);
+router.post('/:id/books', usersCtrl.addbook);
+// router.delete('/:id/books', usersCtrl.deleteBook);
+
 
 
 module.exports = router;

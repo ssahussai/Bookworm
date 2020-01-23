@@ -76,7 +76,11 @@ class FindBooksForm extends Component {
               <p>Author: {item.author}</p>
               <p>Description: {item.description}</p>
               <p>Buy it on Amazon: {item.amazon_product_url}</p>
-              <button onClick={() => this.handleClick(item)} type="submit">Add to My Booklist</button>
+              <button 
+                onClick={() => this.handleClick(item)} type="submit"
+              >
+                Add to My Booklist
+              </button>
             </div>
             ))
           }

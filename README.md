@@ -2,7 +2,7 @@
 
 Created By | Last Updated
 -----------|--------------
-Salma Khan | January 21, 2020
+Salma Khan | January 22, 2020
 
 
 ## User Stories
@@ -13,7 +13,8 @@ Salma Khan | January 21, 2020
 * AAU, I want to be able to get book reviews from New York Times by searching book title, author, or the ISBN number in the "Reviews" page.
 * AAU, I want to be able to get a list of New York Times best sellers book by searching their list name in the "Find Books" page.
     * AAU, I want to be able to see the names of all the lists that New York Times uses to categorize their best sellers book into by clicking a button called "Find List Names Here".
-* 
+* AAU, in the "Find Books" or "Reviews" page, I want to have the ability to add the books I like in "My Book List" so that I can read it later.
+* AAU, I should be able to see a list of all the books I have added in the “My Booklist” page.
 
 ## Technologies Used
  * React
@@ -40,3 +41,5 @@ Salma Khan | January 21, 2020
 
 
 ## Future Enhancements
+* You can expand the project by creating a "Libraries" page where you can have multiple libraries containing books based on genre, author etc. 
+* You can also add a new page called “Add  My Reviews” page where you will be able to write your own reviews of the books once you are done reading them. 
