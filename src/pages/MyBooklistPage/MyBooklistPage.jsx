@@ -15,7 +15,7 @@ const MyBooklistPage = (props) => {
                 ? props.books.map((book, idx) => {
                    return (
                        <section key={idx} className={styles.booklistSection}>
-                        <h3>Book Title: {book.title}</h3>
+                        <h4>Title: {book.title}</h4>
                         <p>Author: {book.author}</p>
                         <button className="btn btn-default">Remove Book</button>
                        </section>
