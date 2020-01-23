@@ -43,7 +43,8 @@ class ReviewsForm extends Component {
         });
       }
 
-      handleClick = (book) => {
+      handleClick = (e, book) => {
+        e.preventDefault();
         this.props.handleClick(book)
       }
       
@@ -95,7 +96,7 @@ class ReviewsForm extends Component {
                   <p>Published On: {item.publication_dt}</p>
                   <p>ISBN: {item.isbn13}</p>
                   <p>Reviews Link: {item.url}</p>
-                  <button onClick={() => this.handleClick(item)} type="submit">
+                  <button onClick={(e) => this.handleClick(e, item)}>
                     Add to My Booklist
                   </button>
                 </div>

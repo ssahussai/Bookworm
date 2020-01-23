@@ -42,7 +42,8 @@ class FindBooksForm extends Component {
     });
   }
 
-  handleClick = (book) => {
+  handleClick = (e, book) => {
+    e.preventDefault();
     this.props.handleClickFindBook(book)
   }
 
@@ -76,18 +77,14 @@ class FindBooksForm extends Component {
               <p>Author: {item.author}</p>
               <p>Description: {item.description}</p>
               <p>Buy it on Amazon: {item.amazon_product_url}</p>
-              <button 
-                onClick={() => this.handleClick(item)} type="submit"
-              >
-                Add to My Booklist
-              </button>
+              <button onClick={(e) => this.handleClick(e, item)}>Add to My Booklist</button>
             </div>
             ))
           }
         </section> 
         <div>
           <p>Click the button below to find the list names so that you can search it to get books within that list.</p>
-          <button type="submit" onClick={this.handlClickFindList}>Find List Names</button>
+          <button onClick={this.handlClickFindList}>Find List Names</button>
           {
             this.state.listResults.map((item, idx) => (
             <div key={idx}>
