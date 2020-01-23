@@ -82,12 +82,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           Bookworm
-          <nav>
-            <NavBar 
+          <NavBar 
               user={this.state.user}
               handleLogout={this.handleLogout}
-            />
-          </nav>
+          />
         </header>
 
         <main> 
@@ -132,6 +130,7 @@ class App extends Component {
           />
         </Switch>
         </main>
+        <footer className="footer">Copyright &copy; Salma Khan 2020</footer>
       </div>
     );
   }

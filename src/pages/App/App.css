@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
   min-height: 10vh;
   display: grid;
   grid-template-rows: 7vmin auto;
@@ -21,4 +21,8 @@
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+}
+
+.footer{
+  text-align: center;
 }

@@ -1,10 +1,14 @@
 import React from 'react';
+import homeimg from './homeimg.png';
+import styles from './HomePage.module.css';
 
 
 const HomePage = (props) => {
     return (
         <main>
-            <h1>Home Page Contents</h1>
+            <h1 className={styles.h1}>B O O K W O R M</h1>
+                <h4>Welcome! Please login to explore your reading options. If you are not a member yet, please Sign Up</h4>
+            <img src={homeimg} alt="image of a bookworm"/>
         </main>
     );
 }
