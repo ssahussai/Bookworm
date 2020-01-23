@@ -50,12 +50,13 @@ class FindBooksForm extends Component {
   render() {
     return (
       <div>
-        <header className={styles.formHeader}>Search best seller books</header>
+        <header className={styles.formHeader}>Search Best Seller Books</header>
         <form onSubmit={this.handleSubmit}>
-          <div>
-          <div>
-            <div>
+          <div className={styles.formHeader}>
+          <div className="form-group">
+            <div className="col-sm-12">
               <input 
+                className="form-control" 
                 name="listName"
                 value={this.state.listName} 
                 onChange={this.handleChange}
@@ -64,11 +65,12 @@ class FindBooksForm extends Component {
             </div>
           </div>
             <div>
-              <button type="submit">Search</button>
+              <button className='btn btn-default' type="submit">Search</button>&nbsp;&nbsp;
+              <Link to='/'>Cancel</Link>
             </div>
           </div>
         </form>
-        <Link to='/'>Cancel</Link>
+        {/* <Link to='/' >Cancel</Link> */}
         <section className={styles.findBooksSection}>
           {
             this.state.results.map((item, idx) => (
@@ -84,7 +86,7 @@ class FindBooksForm extends Component {
         </section> 
         <div>
           <p>Click the button below to find the list names so that you can search it to get books within that list.</p>
-          <button onClick={this.handlClickFindList}>Find List Names</button>
+          <button className='btn btn-default' onClick={this.handlClickFindList}>Find List Names</button>
           {
             this.state.listResults.map((item, idx) => (
             <div key={idx}>

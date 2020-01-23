@@ -17,7 +17,7 @@ const MyBooklistPage = (props) => {
                        <section key={idx} className={styles.booklistSection}>
                         <h3>Book Title: {book.title}</h3>
                         <p>Author: {book.author}</p>
-                        <button type="submit">Remove Book</button>
+                        <button className="btn btn-default">Remove Book</button>
                        </section>
                    ); 
                 })

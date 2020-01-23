@@ -51,41 +51,47 @@ class ReviewsForm extends Component {
     render() {
         return (
           <div>
-            <header className={styles.formHeader}>Find Book Reviews</header>
-            <form onSubmit={this.handleSubmit}>
+            <header className={styles.formTitle}>Find Book Reviews</header>
+            <form className={styles.formHeader} onSubmit={this.handleSubmit}>
               <div>
-              <div>
-                <div>
+              <div className="form-group">
+                <div className="col-sm-12">
                   <input 
+                    className="form-control"
                     name="authorName" 
                     value={this.state.authorName} 
                     onChange={this.handleChange}
                     type="text" placeholder="Author"
                   />
                 </div>
-                <div>
+                <div className="col-sm-12">
                   <input
+                    className="form-control"
                     name="titleName"
                     value={this.state.titleName}
                     onChange={this.handleChange}
                     type="text" placeholder="Book Title"
                   />
                 </div>
-                <div>
+                <div className="col-sm-12">
                   <input
+                    className="form-control"
                     name="isbnName"
                     value={this.state.isbnName}
                     onChange={this.handleChange}
                     type="text" placeholder="ISBN"
                   />
                 </div>
-              </div>
-                <div>
-                  <button type="submit">Search</button>
+              </div >
+                <div className="form-group">
+                  <div className="col-sm-12 text-center">
+                    <button className="btn btn-default" type="submit">Search</button>&nbsp;&nbsp;
+                    <Link to='/'>Cancel</Link>
+                  </div>
                 </div>
               </div>
             </form>
-            <Link to='/'>Cancel</Link>
+            {/* <Link to='/'>Cancel</Link> */}
             <section className={styles.bookSection}>
               {
                 this.state.results.map((item, idx) => (
