@@ -91,7 +91,6 @@ class ReviewsForm extends Component {
                 </div>
               </div>
             </form>
-            {/* <Link to='/'>Cancel</Link> */}
             <section className={styles.bookSection}>
               {
                 this.state.results.map((item, idx) => (

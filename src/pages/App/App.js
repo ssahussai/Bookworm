@@ -130,7 +130,11 @@ class App extends Component {
           />
         </Switch>
         </main>
-        <footer className="footer">Copyright &copy; Salma Khan 2020</footer>
+        <footer className="footer">
+          Copyright &copy; Salma Khan 2020
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="https://developer.nytimes.com"><img src="https://developer.nytimes.com/files/poweredby_nytimes_200a.png?v=1568441068443" alt="img"/></a>
+        </footer>
       </div>
     );
   }

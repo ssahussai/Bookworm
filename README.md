@@ -2,7 +2,7 @@
 
 Created By | Last Updated
 -----------|--------------
-Salma Khan | January 22, 2020
+Salma Khan | January 23, 2020
 
 
 ## User Stories
@@ -23,8 +23,11 @@ Salma Khan | January 22, 2020
  * Mongoose
  * MongoDB 
  * MongoDB Atlas 
- * Token-based Auth with React & JWTs
  * REST API
+ * Bootstrap 
+ * HTML
+ * CSS
+ * Token-based Auth with React & JWTs
 
  ## Third Party API
  * New York Times: [Click here to learn more](https://developer.nytimes.com/)
@@ -43,3 +46,4 @@ Salma Khan | January 22, 2020
 ## Future Enhancements
 * You can expand the project by creating a "Libraries" page where you can have multiple libraries containing books based on genre, author etc. 
 * You can also add a new page called “Add  My Reviews” page where you will be able to write your own reviews of the books once you are done reading them. 
+* The app can have more definded styles with images.

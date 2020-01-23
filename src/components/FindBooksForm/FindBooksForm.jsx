@@ -84,8 +84,9 @@ class FindBooksForm extends Component {
             ))
           }
         </section> 
-        <div>
-          <p>Click the button below to find the list names so that you can search it to get books within that list.</p>
+        <div className={styles.btnFind}>
+          <h4>New York Times catagorizes its best selling books in multiple lists.</h4>
+          <h4>Click the button below to find the list names so that you can search the list name obove it to get books within that list catagory.</h4>
           <button className='btn btn-default' onClick={this.handlClickFindList}>Find List Names</button>
           {
             this.state.listResults.map((item, idx) => (
