@@ -9,6 +9,7 @@
 .formHeader {
     margin-top: 10px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .bookSection {
@@ -18,9 +19,18 @@
 }
 
 .bookReviewContainer {
-    margin-top: 200px;
     padding: 20px 20px;
-    border: 1px solid grey;
+    border: 2px solid white;
     border-radius: 40px;
 }
 
+.formatLinkA {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.formatLink {
+    color: white;
+    font-weight: bold;
+}

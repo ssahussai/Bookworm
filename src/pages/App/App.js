@@ -81,7 +81,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          Bookworm
+          B O O K W O R M
           <NavBar 
               user={this.state.user}
               handleLogout={this.handleLogout}

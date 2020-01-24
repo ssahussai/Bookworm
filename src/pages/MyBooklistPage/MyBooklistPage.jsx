@@ -20,7 +20,7 @@ const MyBooklistPage = (props) => {
                 : 
                 <div className={styles.noBookYet }>
                     <h3>You don't have any books yet!</h3>
-                    <p>Why don't you find some books in the "Find Books" page or the "Reviews" page and add them to your booklist? </p>
+                    <p className={styles.paraFormat}>Why don't you find some books in the "Find Books" page or the "Reviews" page and add them to your booklist? </p>
                 </div>
             }
         </main>

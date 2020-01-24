@@ -14,7 +14,7 @@
 
 .findBooksContainer {
     padding: 20px 20px;
-    border: 1px solid grey;
+    border: 2px solid white;
     border-radius: 40px;
 }
 
@@ -29,4 +29,10 @@
 
 .paraStyle {
     color: white;
+}
+
+.formatLinkB {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
 }

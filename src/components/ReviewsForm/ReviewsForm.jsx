@@ -90,17 +90,17 @@ class ReviewsForm extends Component {
                   </div>
                 </div>
               </div>
-            </form>
+            </form>&nbsp;&nbsp;
             <section className={styles.bookSection}>
               {
                 this.state.results.map((item, idx) => (
                 <div key={idx} className={styles.bookReviewContainer}>
-                  <p>Title: {item.book_title}</p>
-                  <p>Author: {item.book_author}</p>
-                  <p>Summary: {item.summary}</p>
-                  <p>Published On: {item.publication_dt}</p>
-                  <p>ISBN: {item.isbn13}</p>
-                  <p><a href={item.url}>Click Here For Reviews</a></p>
+                  <p className={styles.formatLink}>Title: {item.book_title}</p>
+                  <p className={styles.formatLink}>Author: {item.book_author}</p>
+                  <p className={styles.formatLink}>Summary: {item.summary}</p>
+                  <p className={styles.formatLink}>Published On: {item.publication_dt}</p>
+                  <p className={styles.formatLink}>ISBN: {item.isbn13}</p>
+                  <p><a target="_blank" href={item.url} className={styles.formatLinkA}>Click Here For Reviews</a></p>
                   <button onClick={(e) => this.handleClick(e, item)}>
                     Add to My Booklist
                   </button>

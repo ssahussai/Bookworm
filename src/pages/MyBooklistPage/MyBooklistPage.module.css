@@ -3,8 +3,9 @@
     margin-left: 60px;
     margin-right: 60px;
     padding: 20px 20px;
-    border: 1px solid grey;
+    border: 2px solid white;
     border-radius: 50px;
+    color: white;
 }
 
 .formHeader {
@@ -18,4 +19,9 @@
 
 .noBookYet {
     text-align: center;
+}
+
+.paraFormat {
+    font-size: 18px;
+    color: white;
 }

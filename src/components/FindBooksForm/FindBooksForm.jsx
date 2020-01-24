@@ -69,7 +69,7 @@ class FindBooksForm extends Component {
               <Link to='/'>Cancel</Link>
             </div>
           </div>
-        </form>
+        </form>&nbsp;&nbsp;
         <section className={styles.findBooksSection}>
           {
             this.state.results.map((item, idx) => (
@@ -77,7 +77,7 @@ class FindBooksForm extends Component {
               <p>Book Title: {item.title}</p>
               <p>Author: {item.author}</p>
               <p>Description: {item.description}</p>
-              <p>Buy it on Amazon: {item.amazon_product_url}</p>
+              <p><a target="_blank" href={item.amazon_product_url} className={styles.formatLinkB}>Buy it on Amazon</a></p>
               <button onClick={(e) => this.handleClick(e, item)}>Add to My Booklist</button>
             </div>
             ))
