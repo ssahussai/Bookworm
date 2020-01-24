@@ -44,6 +44,7 @@ Bookworm is a web-based application where users can find the New York Times best
 
 
 ## Deployed on Heroku
+[Check out Bookworm here!](https://bookwormssk.herokuapp.com/)
 
 
 ## Future Enhancements

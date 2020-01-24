@@ -23,7 +23,6 @@ function logout() {
 }
 
 
-
 function login(creds) {
   return fetch(BASE_URL + 'login', {
     method: 'POST',
@@ -56,12 +55,12 @@ function addBook(id, book) {
   })
 }
 
-// function deleteBook(id) {
-//   return fetch(BASE_URL + id + '/books', {
-//     method: 'DELETE'
-//   })
-//   .then(res => res.json());
-// }
+function deleteBook(userId, bookId) {
+  return fetch(BASE_URL + userId + '/books/' + bookId, {
+    method: 'DELETE'
+  })
+  .then(res => res.json());
+}
 
 
 export default {
@@ -71,5 +70,5 @@ export default {
   login,
   getBooks,
   addBook,
-  // deleteBook
+  deleteBook
 }; 

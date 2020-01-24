@@ -4,10 +4,6 @@ import styles from './MyBooklistPage.module.css';
 
 const MyBooklistPage = (props) => {
 
-    // handleClickDelete = (id) => {
-    //     this.props.handleClickDeleteBook(id)
-    // }
-
     return (
         <main>
             <header className={styles.formHeader}>My Book List</header>
@@ -17,7 +13,7 @@ const MyBooklistPage = (props) => {
                        <section key={idx} className={styles.booklistSection}>
                         <h4>Title: {book.title}</h4>
                         <p>Author: {book.author}</p>
-                        <button className="btn btn-default">Remove Book</button>
+                        <button onClick={() => props.handleDeleteBook(book._id)} className="btn btn-default">Remove Book</button>
                        </section>
                    ); 
                 })

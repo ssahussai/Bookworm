@@ -9,7 +9,7 @@ router.post('/login', usersCtrl.login);
 /*---------- Protected Routes ----------*/
 router.get('/:id/books', usersCtrl.getBooks);
 router.post('/:id/books', usersCtrl.addbook);
-// router.delete('/:id/books', usersCtrl.deleteBook);
+router.delete('/:userid/books/:bookid', usersCtrl.deleteBook);
 
 
 

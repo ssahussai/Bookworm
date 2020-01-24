@@ -44,15 +44,15 @@ class App extends Component {
     });
   }
 
-  // delete book
-  // handleClickDeleteBook = (id) => {
-  //   userService.deleteBook(id)
-  //   .then(data => {
-  //     this.setState({ books: data }, () => {
-  //       return this.props.history.push('/my-booklist-page')
-  //     })
-  //   })
-  // }
+  
+  handleDeleteBook = (bookId) => {
+    userService.deleteBook(this.state.user._id, bookId)
+    .then(data => {
+      this.setState({ books: data }, () => {
+        return this.props.history.push('/my-booklist-page')
+      })
+    })
+  }
 
   handleClick = ({ book_title, book_author }) => {
     userService.addBook(this.state.user._id, {
@@ -109,7 +109,7 @@ class App extends Component {
           <Route exact path="/my-booklist-page" render={(props) => 
             <MyBooklistPage 
               books={this.state.books} {...props} 
-              // handleClickDeleteBook={this.handleClickDeleteBook}
+              handleDeleteBook={this.handleDeleteBook}
 
             />
             }
