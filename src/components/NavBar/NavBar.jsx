@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import styles from './NavBar.module.css';
+
 
 const NavBar = (props) => {
   let nav = props.user ?

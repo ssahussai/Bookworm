@@ -4,6 +4,9 @@ Created By | Last Updated
 -----------|--------------
 Salma Khan | January 23, 2020
 
+Bookworm is a web-based application where users can find the New York Times best seller's books along with book reviews. The books can be searched by their title, author, isbn, or the lists under which New York Times catagorized the books. If the users like the book / review, they will be able to create their own personalized booklist. 
+
+![Bookworm](./public/bookworm.png)
 
 ## User Stories
 * As a user (AAU), when I browse the page, I should be able to see the “Home” page with a description of the app and how to use it. 
@@ -46,4 +49,3 @@ Salma Khan | January 23, 2020
 ## Future Enhancements
 * You can expand the project by creating a "Libraries" page where you can have multiple libraries containing books based on genre, author etc. 
 * You can also add a new page called “Add  My Reviews” page where you will be able to write your own reviews of the books once you are done reading them. 
-* The app can have more definded styles with images.

@@ -6,4 +6,11 @@ h1 {
 
 h3 {
     color: white
+    
+}
+
+.descSection {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }
