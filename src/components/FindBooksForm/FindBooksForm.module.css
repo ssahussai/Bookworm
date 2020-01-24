@@ -2,7 +2,7 @@
     padding-top: 40px;
     text-align: center;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 40px;
     color: grey;
 }
 
@@ -21,4 +21,8 @@
 .btnFind {
     text-align: center;
     padding-top: 50px;
+}
+
+.btnHead {
+    text-align: center;
 }

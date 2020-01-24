@@ -52,7 +52,7 @@ class FindBooksForm extends Component {
       <div>
         <header className={styles.formHeader}>Search Best Seller Books</header>
         <form onSubmit={this.handleSubmit}>
-          <div className={styles.formHeader}>
+          <div>
           <div className="form-group">
             <div className="col-sm-12">
               <input 
@@ -64,13 +64,12 @@ class FindBooksForm extends Component {
               />
             </div>
           </div>
-            <div>
+            <div className={styles.btnHead}>
               <button className='btn btn-default' type="submit">Search</button>&nbsp;&nbsp;
               <Link to='/'>Cancel</Link>
             </div>
           </div>
         </form>
-        {/* <Link to='/' >Cancel</Link> */}
         <section className={styles.findBooksSection}>
           {
             this.state.results.map((item, idx) => (

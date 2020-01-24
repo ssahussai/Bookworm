@@ -23,7 +23,7 @@
 }
 
 .App main h1 {
-  color: var(--secondary-dark);
+  /* color: var(--secondary-dark); */
   margin-bottom: 5vmin;
 }
 
@@ -35,4 +35,6 @@
   right:0;
   text-align: center;
   margin-top: 10px;
+  font-weight: bold;
+  color: grey;
 }

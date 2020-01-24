@@ -10,7 +10,7 @@ const MyBooklistPage = (props) => {
 
     return (
         <main>
-            <h1>My Book List</h1>
+            <header className={styles.formHeader}>My Book List</header>
             { props.books.length !== 0 
                 ? props.books.map((book, idx) => {
                    return (
@@ -22,7 +22,7 @@ const MyBooklistPage = (props) => {
                    ); 
                 })
                 : 
-                <div>
+                <div className={styles.noBookYet }>
                     <h3>You don't have any books yet!</h3>
                     <p>Why don't you find some books in the "Find Books" page or the "Reviews" page and add them to your booklist? </p>
                 </div>
