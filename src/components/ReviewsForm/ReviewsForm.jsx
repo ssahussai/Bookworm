@@ -100,7 +100,7 @@ class ReviewsForm extends Component {
                   <p className={styles.formatLink}>Summary: {item.summary}</p>
                   <p className={styles.formatLink}>Published On: {item.publication_dt}</p>
                   <p className={styles.formatLink}>ISBN: {item.isbn13}</p>
-                  <p><a target="_blank" href={item.url} className={styles.formatLinkA}>Click Here For Reviews</a></p>
+                  <p><a target="_blank" rel="noopener noreferrer" href={item.url} className={styles.formatLinkA}>Click Here For Reviews</a></p>
                   <button onClick={(e) => this.handleClick(e, item)}>
                     Add to My Booklist
                   </button>

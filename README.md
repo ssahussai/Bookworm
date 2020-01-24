@@ -4,7 +4,7 @@ Created By | Last Updated
 -----------|--------------
 Salma Khan | January 24, 2020
 
-Bookworm is a web-based application where users can find the New York Times best seller's books along with book reviews. The books can be searched by their title, author, isbn, or the lists under which New York Times catagorized the books. If the users like the book / review, they will be able to create their own personalized booklist or be able to purchase the book from Amazon. 
+Bookworm is a Full Stack MERN web-based application where users can find the New York Times best seller's books along with book reviews. The books can be searched by their title, author, isbn, or the lists under which New York Times catagorized the books. If the users like the book / review, they will be able to create their own personalized booklist or be able to purchase the book from Amazon. 
 
 ![Bookworm](./public/bookworm.png)
 

@@ -77,7 +77,7 @@ class FindBooksForm extends Component {
               <p>Book Title: {item.title}</p>
               <p>Author: {item.author}</p>
               <p>Description: {item.description}</p>
-              <p><a target="_blank" href={item.amazon_product_url} className={styles.formatLinkB}>Buy it on Amazon</a></p>
+              <p><a target="_blank" rel="noopener noreferrer" href={item.amazon_product_url} className={styles.formatLinkB}>Buy it on Amazon</a></p>
               <button onClick={(e) => this.handleClick(e, item)}>Add to My Booklist</button>
             </div>
             ))
