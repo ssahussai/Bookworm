@@ -29,7 +29,6 @@ Bookworm is a web-based application where users can find the New York Times best
  * MongoDB 
  * MongoDB Atlas 
  * REST API
- * Bootstrap 
  * HTML
  * CSS
  * Token-based Auth with React & JWTs
