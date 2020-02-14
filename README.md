@@ -31,7 +31,7 @@ Bookworm is a Full Stack MERN web-based application where users can find the New
  * REST API
  * HTML
  * CSS
- * Token-based Auth with React & JWTs
+ * Token-based Authentication with React & JWTs
 
  ## Third Party API
  * New York Times: [Click here to learn more](https://developer.nytimes.com/)
@@ -51,4 +51,4 @@ Bookworm is a Full Stack MERN web-based application where users can find the New
 
 ## Future Enhancements
 * You can expand the project by creating a "Libraries" page where you can have multiple libraries containing books based on genre, author etc. 
-* You can also add a new page called “Add  My Reviews” page where you will be able to write your own reviews of the books once you are done reading them. 
+* You can also add a new page called “Add  My Reviews” where you will be able to write your own reviews of the books once you are done reading them. 
